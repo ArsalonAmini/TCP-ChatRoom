@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2b494f49-e8ba-461c-a8a6-944201dc13f9" name="UMLClassDiagram1" linkedPackageId="b4ec11bc-cb43-4b5a-9b1d-7a98e392391d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9f67b60a-342e-4a8c-953a-0b88c8c24370" name="Client Class" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bbf38b9a-e1b1-4240-8c20-94fffac525f5" />
+        <ownedAttributesInternal>
+          <property Id="73e397d6-fcda-492a-aa63-3a62e00ed15b" name="GUIObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b3ead152-a14b-47ea-853a-6f4dc915ac2e" />
+          </property>
+          <property Id="593b625b-041c-49cb-8714-6cbf5e9b1d5f" name="ServerObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d88b5d5f-15f5-4f44-94ba-f0c21e498312" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="8fdb0915-b024-4282-9a48-1f2b893ef906" name="SendMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="239476c0-0eee-4918-ade9-e00d4d266505" />
+          </operation>
+          <operation Id="71c95d01-d799-4e07-84d1-2545869f6435" name="RecieveMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b6fd84b3-2656-4749-870a-6365256ed21a" />
+          </operation>
+          <operation Id="08764a89-a1f8-493d-88cb-50c9455fe8c0" name="GetServer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d8808890-3d0a-4dc4-b26d-e0c4dfc4b9c9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4de92ce0-a454-4f05-b447-3c8b15c1b220" name="GUI" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="efd62dfb-fa0d-4c85-a072-cdb5f9fe2bc3" />
+        <targetEnds>
+          <association Id="d4592e04-7441-4971-9cc4-dadd5082e9b4" isDerived="false" sourceEndRoleName="GUI" targetEndRoleName="Client Class" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9f67b60a-342e-4a8c-953a-0b88c8c24370" LastKnownName="Client Class" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="85f57ff2-c06b-4b5f-ab9a-02c10e24b7e1" name="GUI" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cde928aa-ed35-41fb-ae4c-89208f35eb6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea73cec1-3710-4bfe-84e0-7f4e3caeee83" name="Client Class" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8567933a-b604-4158-ab3b-828393804b95" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="20d89b94-0674-4706-977f-686f1b801036" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="792ac6b9-b448-4223-a9cd-31c64ca37614" name="MessageDashboard" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="25f4c6bc-be07-4a47-aeb4-ad7d5fb617f6" />
+          </property>
+          <property Id="d5533c85-e7fd-48c4-a1ac-3e3d1cb54017" name="Username" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a70e8798-dd95-4c5f-8612-fafdee45d35c" />
+          </property>
+          <property Id="d5771a23-a20d-4c21-bab6-fff0e66ddc99" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1a30e259-97b5-4818-804e-cc3506e23ba4" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="45a6a9d3-483a-4183-8898-9e6929e6c481" name="GetClient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ba33e3e-9f38-4734-b98c-704f85f9a9cd" />
+          </operation>
+          <operation Id="682fbe6b-1985-49dc-83a4-9d05aa487bad" name="GetServer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73051693-d86e-4a0c-b173-70aa153d38cf" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7072601e-3e8f-4141-98c8-d421df28273c" name="Program" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b4772907-1f1c-4359-8540-177e5169e057" />
+        <targetEnds>
+          <association Id="223151cf-1fe0-4093-b26c-f37439a17182" isDerived="false" sourceEndRoleName="Program" targetEndRoleName="GUI" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4de92ce0-a454-4f05-b447-3c8b15c1b220" LastKnownName="GUI" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f933055e-f376-4f16-aa69-7446e7e0b433" name="Program" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b51b4985-2543-4a77-840d-421f7bc17f7d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="605b9292-04bf-4b62-821f-997bc033e2f8" name="GUI" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="130bd83c-d4ed-4fbf-88ae-29b6ede0c63b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5384cb71-06aa-4137-9a7e-29f6ee9a0487" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="b4ec11bc-cb43-4b5a-9b1d-7a98e392391d" name="TCP-UnifiedModelingClassDiagram">
+    <elementDefinition Id="2b4331ea-d06f-490e-b2aa-ecb70fbca22a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="551d7b84-801b-4618-bf72-fabb4ee24e21">
+        <profileInstance Id="5745e83e-b1ea-498b-8921-55332c6dbd99" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6b18b9f9-1c50-4109-8b77-8420ebb6f566">
+        <profileInstance Id="09e44313-b79a-47ad-b90a-b22816c6b624" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="450b2160-cc2f-4b1b-a254-e978f17795b8" name="ServerUMLClassDiagram" linkedPackageId="7a68576f-42f7-4ce7-bbcb-629a088b0ef6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e2cb676c-20a2-468c-bc37-2a5bcd62f48e" name="Program" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9fd18e78-308c-4bdc-9d75-1fa30e0f976c" />
+        <targetEnds>
+          <association Id="1b4dd696-00a3-4612-be68-16f3fcb280cb" isDerived="false" sourceEndRoleName="Program" targetEndRoleName="Server" isLeaf="false" isAbstract="false">
+            <classMoniker Id="65686f41-599b-42ba-b2a9-bfdc9cddb16b" LastKnownName="Server" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f49cad4b-ddc3-4009-91c0-f5db666755a8" name="Program" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="145e69fb-6f09-4a91-8675-8f9d3bd9d8a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b53e972-c5a1-4d7f-8a27-4c4c291e5365" name="Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f725364c-b41a-4fe9-ad8f-5a36574d5503" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7804483c-a76b-4fd4-a9e2-bf21400af4d3" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9e39c6d7-c014-4b38-a34b-f458a6544f0b" name="Search Class" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="499bbf70-c4b2-40b3-a6ff-4b038995cf04" />
+        <ownedAttributesInternal>
+          <property Id="cd35dae2-780f-432c-9cf8-2cdd11dbe8c3" name="ListData" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="585f880a-cf2e-4068-9f4b-d1fdd26e5905" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e2e26cda-768d-49f9-b49f-aa007f3c408e" name="AddClient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73af05f0-5d36-489c-9b3c-479822676b93" />
+          </operation>
+          <operation Id="b54de8ff-b993-4ff2-9758-3bc1f1234049" name="RunSearch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f38109eb-3cfc-4e4b-bde6-9c8d1ec72dae" />
+          </operation>
+          <operation Id="3cfa2bd5-336c-4b15-8d54-40cb047637a1" name="GetDictionary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a68d26d3-dea9-41c9-b276-4406e166ce7e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="54ede7a4-9de7-49f6-a21d-8f73dc487503" name="Dictionary Class" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="90c79dc7-2bd2-48d1-a88c-20c0ca2ef0be" />
+        <ownedAttributesInternal>
+          <property Id="3cd2c985-e562-4e3a-b8d1-f7012a9a3384" name="ListData" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="992795b4-dd19-4f71-a363-2dbf6b3a942a" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0e0c54eb-6a52-4bd7-9b65-8925a24cd05f" name="GetDictionary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="37f957de-61fb-4a67-a219-ea21cbe223bb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f977c265-dfb0-4141-8dfb-f318a191e4ba" name="Chat Class" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="540baba5-ec6d-4c21-8a04-52d4bd196207" />
+        <generalsInternal>
+          <generalization Id="b566e6c2-ac2a-4b28-876f-a8ef15459699" isSubstitutable="false">
+            <classMoniker Id="dc50a0c9-0078-4468-87ff-070178871d59" LastKnownName="Private Chat Class" />
+            <elementDefinition Id="ccec5ba1-82cb-45d0-b636-eb422610d89d" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="7fae0e90-fc8d-4753-8250-3a4556ed3d31" name="ClientObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7299c630-e2ad-4011-ab51-073b7a5e0ead" />
+          </property>
+          <property Id="769bdf10-2d5a-4577-acf4-a34dbc39e07a" name="ServerObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="060279c7-358f-483d-9ca2-08eca9b7f93c" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2586fd73-0f45-4497-8b01-84b1c7c7a8d9" name="GetMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c5502b6d-eb30-4b6d-83da-7b045cab2421" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dc50a0c9-0078-4468-87ff-070178871d59" name="Private Chat Class" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f44625d6-e96c-4a50-8e4f-233c1f777adb" />
+        <ownedAttributesInternal>
+          <property Id="5d206a8d-e6a6-4548-b023-3334c2416f35" name="ServerObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="458afc04-55c0-42f6-9888-91867c84a43f" />
+          </property>
+          <property Id="e5260d91-136e-41ac-8697-eb95c501050c" name="ChatObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9fc76fd7-3db2-496f-8e98-8f8a40c80326" />
+          </property>
+          <property Id="03127a0d-9ca2-4b5b-af9d-ae193acbd5ad" name="ClientObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fd6382ec-acf4-471e-b12c-dc7900f2b51c" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="c37590b0-e8f0-4f22-b419-e7d0000aa1cf" name="GetClient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec1f77c7-aca5-4267-8a20-28ad72aa00ba" />
+          </operation>
+          <operation Id="3d2f3c5b-a1b0-4431-a668-657a4df9fa0e" name="GetMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a62b5fb1-cfce-4952-b236-9f68579fc25a" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="65686f41-599b-42ba-b2a9-bfdc9cddb16b" name="Server" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b9c02a00-a2bb-4256-9c49-6c539c9fe0de" />
+        <targetEnds>
+          <association Id="ad6b79f4-529f-4496-85e0-a42e82d2623b" isDerived="false" sourceEndRoleName="Server" targetEndRoleName="Dictionary Class" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54ede7a4-9de7-49f6-a21d-8f73dc487503" LastKnownName="Dictionary Class" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b4823c6e-65a9-4c56-a7ac-8c402ab2c826" name="Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b9d7534d-d38f-4948-9881-96a8fb812a09" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4ead9f4d-b893-448a-aaf9-3cd7167b905d" name="Dictionary Class" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ac10ea1c-3ad9-4927-981b-e5a531283563" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="deeace7f-388b-4a84-8a3d-186094a727ea" />
+          </association>
+          <association Id="acbc77d1-5230-449d-847f-a50d0c84c319" isDerived="false" sourceEndRoleName="Server" targetEndRoleName="Search Class" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9e39c6d7-c014-4b38-a34b-f458a6544f0b" LastKnownName="Search Class" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1c6bb777-4929-4fa9-a624-ebb3cd2c90e0" name="Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1d2b62a7-d446-4593-8afe-f085770378ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d52c136a-5369-4d6d-8dfd-f5157d8ab47c" name="Search Class" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e3e97ac9-1701-4b70-a76e-d738f77ecdda" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cd58f3cb-237b-494c-8b21-adea1d9aff56" />
+          </association>
+          <association Id="3abc248f-c24b-4f1a-97a2-82e1b30635f7" isDerived="false" sourceEndRoleName="Server" targetEndRoleName="Chat Class" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f977c265-dfb0-4141-8dfb-f318a191e4ba" LastKnownName="Chat Class" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="50f3e58b-ae7f-432e-a09d-ff30583b292c" name="Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1b170667-fc34-4876-9ae4-7f8978edec56" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="582cd852-25f8-48a3-974a-a8accd89386e" name="Chat Class" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="89bfda4d-a34f-4c4c-b58b-ce1fb841aee4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d161b5a5-d15b-4001-9034-ee8564e53254" />
+          </association>
+          <association Id="a4f95787-ce81-4e84-a19f-9f4985363b73" isDerived="false" sourceEndRoleName="Server" targetEndRoleName="Private Chat Class" isLeaf="false" isAbstract="false">
+            <classMoniker Id="dc50a0c9-0078-4468-87ff-070178871d59" LastKnownName="Private Chat Class" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="79c5d7f5-0ed1-412e-a157-9db942f8a719" name="Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b39fbb3c-168f-4d9e-be8c-75d7942f61a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="549e87cb-9094-476e-99cf-e72ac85bd8b7" name="Private Chat Class" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="93f80abc-028e-4fea-8acc-2450109c139c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="14ff0014-e5cf-4745-a61d-a65fc63a2a4c" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="75b9c3f0-c153-41d6-9398-6e213592938d" name="DictionaryObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bfb84fb0-2c01-4a4d-96e8-e56958b69a2e" />
+          </property>
+          <property Id="0bdae49f-b076-4b98-a011-ad91e7137384" name="SearchObject" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f2108fb4-25b7-4ee4-89d6-0bd02500d063" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="7a68576f-42f7-4ce7-bbcb-629a088b0ef6" name="Server-UML">
+    <elementDefinition Id="5083751d-349f-4d7b-8b24-041ad253ccc0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b8855e1b-ea5f-4781-848c-291ea3f431a2">
+        <profileInstance Id="c17c20da-0445-4677-938c-38ef09d8c0fe" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6425cbfb-01dc-4803-a18a-c7507731adf1">
+        <profileInstance Id="e5c373a3-9f03-4080-ba93-f6061ee7f8d8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

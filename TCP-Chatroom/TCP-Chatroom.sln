@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP-Client", "TCP-Chatroom\TCP-Client.csproj", "{52506075-7D46-420F-9A80-5E5915E434D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP-ClientTesting", "TCP-Chatroom_UnitTesting\TCP-ClientTesting.csproj", "{67F3FD08-11FB-4B75-8F1B-5E19B2142499}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Client-UML", "TCP-UnifiedModelingClassDiagram\Client-UML.modelproj", "{D4A58110-1560-458C-B727-C0FFE93BD046}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52506075-7D46-420F-9A80-5E5915E434D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52506075-7D46-420F-9A80-5E5915E434D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52506075-7D46-420F-9A80-5E5915E434D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52506075-7D46-420F-9A80-5E5915E434D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F3FD08-11FB-4B75-8F1B-5E19B2142499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F3FD08-11FB-4B75-8F1B-5E19B2142499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F3FD08-11FB-4B75-8F1B-5E19B2142499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F3FD08-11FB-4B75-8F1B-5E19B2142499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A58110-1560-458C-B727-C0FFE93BD046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A58110-1560-458C-B727-C0FFE93BD046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A58110-1560-458C-B727-C0FFE93BD046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A58110-1560-458C-B727-C0FFE93BD046}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

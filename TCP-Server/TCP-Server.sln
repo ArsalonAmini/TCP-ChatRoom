@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP-Server", "TCP-Server\TCP-Server.csproj", "{148AE1F8-7C1C-4268-A5AC-CF47C6B57D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP-ServerTesting", "TCP-ServerTesting\TCP-ServerTesting.csproj", "{0896A648-05BA-44AD-9011-BD11CB977456}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Server-UML", "Server-UML\Server-UML.modelproj", "{83F7F61D-B30E-457D-B7D6-973A9BB4DAE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{148AE1F8-7C1C-4268-A5AC-CF47C6B57D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{148AE1F8-7C1C-4268-A5AC-CF47C6B57D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{148AE1F8-7C1C-4268-A5AC-CF47C6B57D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{148AE1F8-7C1C-4268-A5AC-CF47C6B57D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0896A648-05BA-44AD-9011-BD11CB977456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0896A648-05BA-44AD-9011-BD11CB977456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0896A648-05BA-44AD-9011-BD11CB977456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0896A648-05BA-44AD-9011-BD11CB977456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F7F61D-B30E-457D-B7D6-973A9BB4DAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F7F61D-B30E-457D-B7D6-973A9BB4DAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F7F61D-B30E-457D-B7D6-973A9BB4DAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F7F61D-B30E-457D-B7D6-973A9BB4DAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
