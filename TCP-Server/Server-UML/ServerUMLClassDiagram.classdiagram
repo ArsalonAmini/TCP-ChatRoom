@@ -185,6 +185,20 @@
             <elementDefinition Id="f2108fb4-25b7-4ee4-89d6-0bd02500d063" />
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ba7fe687-6b61-4336-8822-a1cb623eff80" name="AcceptSocket" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ddf8d067-499f-4ab6-97a8-f9684b57ddd3" />
+          </operation>
+          <operation Id="5c023701-ffea-4d0a-bffe-63c777657870" name="AcceptTcpClient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b77ae20a-397d-45b9-98cf-c950377aaffe" />
+          </operation>
+          <operation Id="d07f91ca-a335-4863-9cd3-34ac5add3b95" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="073973a3-1ba7-4144-b862-62d0390293c5" />
+          </operation>
+          <operation Id="58901115-0095-42fa-8bf0-18e308aa36b0" name="Stop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e4e87a34-b0ac-404e-aa41-07408c740795" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
