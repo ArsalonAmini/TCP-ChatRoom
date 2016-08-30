@@ -33,13 +33,13 @@ namespace TCP_Client
 
             data = new Byte[256]; //buffer to store response bytes
 
-            Int32 bytes = stream.Read(data, 0, data.Length);
+            Int32 bytes = stream.Read(data, 0, data.Length); //store incoming data
 
-            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes); //convert data to bytes
             Console.WriteLine("Recieved: {0}", responseData);
 
-            stream.Close(); //close everything
-            client.Close(); 
+            stream.Close(); //close streaming connection 
+            client.Close(); //close client 
       
         }
 

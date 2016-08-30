@@ -14,10 +14,10 @@ namespace TCP_Server
         public byte[] buffer = new byte[BufferSize];
         int i;
         string data;
-        Int32 port = 1300;
+        //Int32 port = 1300;
         IPAddress localAddress = IPAddress.Parse("10.2.20.253");
         TcpListener server;
-        NetworkStream stream;
+        //NetworkStream stream;
 
         public Server()
         {
