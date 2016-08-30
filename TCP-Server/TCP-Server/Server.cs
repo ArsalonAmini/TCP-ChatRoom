@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
+using System.Net;
 
 namespace TCP_Server
 {
@@ -12,98 +13,59 @@ namespace TCP_Server
         public const int BufferSize = 1024;
         public byte[] buffer = new byte[BufferSize];
         int i;
-        string data = null;
-        string IPAddress;
-        TcpListener listener; 
+        string data;
+        Int32 port = 1300;
+        IPAddress localAddress = IPAddress.Parse("10.2.20.253");
+        TcpListener server;
+        NetworkStream stream;
 
         public Server()
         {
-            TcpListener listener = new TcpListener("10.2.20.253"); //constructor
-            NetworkStream stream = new NetworkStream(listener);
+            TcpListener server = new TcpListener(localAddress, 1000); //constructor //transmission control server
+            data = null;
         }
 
         public void AcceptTcpClient()
         {
-            listener.AcceptTcpClient();
+            server.AcceptTcpClient();
         }
 
         public void AcceptSocket()
         {
-            listener.AcceptSocket();
+            server.AcceptSocket();
         }
 
         public void Start()
         {
-            byte[] bytes = new Byte[1024];
-            listener.Start();
-            
-            try
-            {
-                listener.AcceptTcpClient(IPAddress);
-                
-                while(true)
-                {
-                    Console.WriteLine("Waiting for a connection...");
-                    listener.BeginAcceptSocket()
-                }
-            }
+            byte[] bytes = new Byte[1024]; //buffer for reading data
+            server.Start(); //start listening for client requests
 
-
-
-
-
-
-
-
-        }
-
-        public void RecieveMessages()
-        {
-            //listening loop
             while (true)
             {
                 Console.WriteLine("Waiting for a connection...");
-                TcpClient client = listener.AcceptTcpClient();
+                TcpClient client = server.AcceptTcpClient();
                 Console.WriteLine("Connected!");
 
+                NetworkStream stream = client.GetStream(); //instantiating/assigning stream object for reading and writing
 
-                //stream object for reading and writing
-                NetworkStream stream = client.GetStream();
-
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
+                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) //reiceve client data loop
                 {
-                    //translate data bytes to ASCII string
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    Console.WriteLine("Recieved: (0)", data);
+                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i); //translate data bytes to ASCII string
+                    Console.WriteLine("Sent: {0}", data);
 
-                    //Process data sent by client
-                    data = data.ToUpper();
+                    data = data.ToUpper(); //processing data sent by client
+
+                    byte[] message = System.Text.Encoding.ASCII.GetBytes(data);
+
+                    //send message back
+                    stream.Write(message, 0, message.Length);
+                    Console.WriteLine("Sent: {0}", data);
+
+                    client.Close(); //shutdown and end connection
                 }
-
+                server.Stop(); //stop listening for new clients
             }
+
         }
-        public void Stop()
-        {
-            //closes the listener
-            listener.Stop();
-        }
-
-        //public void DisplayMessage()
-        //{
-        //    if (content.IndexOf("<EOF>") > -1) //all data has been read, display message
-        //    {
-        //        //Console.WriteLine("Read {0} bytes from socket. \n Data: {1}", content.Length, content);
-        //        //Send(handler, content); //echo data back to client
-        //    }
-        //    else
-        //    {
-        //        socket.BeginRecieve()
-
-        //    }
-        //}
-
-       
-
-
     }
 }

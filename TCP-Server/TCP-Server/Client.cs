@@ -8,5 +8,7 @@ namespace TCP_Server
 {
     class Client
     {
+
+
     }
 }
