@@ -43,7 +43,7 @@ namespace TCP_Client
 
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes); //convert server bytes to client string
             Console.WriteLine("Recieved: {0}", responseData);
-
+            Console.ReadLine();
             //stream.Close(); //close streaming connection 
             //client.Close(); //close client 
       

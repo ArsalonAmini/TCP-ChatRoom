@@ -40,16 +40,16 @@ namespace TCP_Server
 
                 while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) //reiceve client data loop
                 {
-                    //data = System.Text.Encoding.ASCII.GetString(bytes, 0, i); //translate data bytes to ASCII string
-                    data = "hello";
-                    Console.WriteLine("Sent: {0}", data);
+                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i); //translate data bytes to ASCII string
+                    //data = "hello";
+                    Console.WriteLine("Received: {0}", data);
 
                     byte[] message = System.Text.Encoding.ASCII.GetBytes(data);
 
                     //send message back
-                    stream.Write(message, 0, message.Length);
-                    Console.WriteLine("Recieved: {0}", data);
-                    Console.ReadLine();
+                    //stream.Write(message, 0, message.Length);
+                    //Console.WriteLine("Recieved: {0}", data);
+                    //Console.ReadLine();
 
                 }
 
