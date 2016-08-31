@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCP_Server
 {
-    class Dictionary
+    class Node
     {
     }
 }
