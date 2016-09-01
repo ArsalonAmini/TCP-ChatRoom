@@ -41,7 +41,7 @@ namespace TCP_Server
 
         public void runChat()
         {
-            while ((true))
+            while ((true)) //Observer pattern (Design pattern) A. Amini-Hajibashi
             {
                 try
                 {
@@ -52,7 +52,7 @@ namespace TCP_Server
                     Console.WriteLine("From Client - " + clientNumber + ":" + dataFromClient);
                     returnCount = Convert.ToString(requestCount);
 
-                    //Program.broadcast (dataFromClient, clientNumber, true);
+                    Server.BroadCastClientMessage(dataFromClient, clientNumber, true);
 
                 }
                 catch (Exception ex)

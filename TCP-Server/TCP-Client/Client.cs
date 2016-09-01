@@ -5,47 +5,89 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
+using System.Threading;
+using System.Windows;
 
 namespace TCP_Client
 {
     class Client
     {
-        String server;
-        String message;
-        IPAddress localAddress = IPAddress.Parse("10.2.20.34");
-        Int32 port = 10000;
-        TcpClient client;
-        string responseData = string.Empty; //string to store ASCII response
-   
+        NetworkStream serverStream;
+        NetworkStream stream;
+        TcpClient clientSocket;
+        IPAddress localAddress;
+        Thread clientThread;
+        string readData;
+        string responseData; //string to store ASCII response
+        Int32 port;
+        string returnData;
+        byte[] outData;
+        byte[] inStream;
+        int bufferSize;
+
         public Client()
         {
-            client = new TcpClient("10.2.20.34", port); //constructor
+            clientSocket = new TcpClient("10.2.20.34", port); //constructor
+            serverStream = default(NetworkStream);
+            serverStream = clientSocket.GetStream();
+            localAddress = IPAddress.Parse("10.2.20.34");
+            port = 10000;
+            readData = null;
+            responseData = string.Empty;
+            outData = System.Text.Encoding.ASCII.GetBytes();
+            returnData = System.Text.Encoding.ASCII.GetString(inStream);
+            stream = clientSocket.GetStream();
+            inStream = new byte[1024];
+            bufferSize = clientSocket.ReceiveBufferSize;
+            clientThread = new Thread(GetMessage);
         }
-        public void Connect ()
+
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            serverStream.Write(outData, 0, outData.Length);
+            serverStream.Flush();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            readData = "Connected to Arsalon's Chat Server....";
+            clientSocket.Connect("10.2.20.34", 10000);
+            serverStream.Write(outData, 0, outData.Length);
+            serverStream.Flush();
+        }
+
+        public void GetMessage ()
         {
             while (true)
             {
-                Console.WriteLine("Enter Message:");
-                message = Console.ReadLine();
-                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); //converts string message to ASCII zeros and ones code, stores ints into byte array called data
-                NetworkStream stream = client.GetStream(); //create variable stream, type networkstream, assign return client stream
-                stream.Write(data, 0, data.Length); //send message to connected TcpServer //don't know what this line does
+                serverStream = clientSocket.GetStream();
+                serverStream.Read(inStream, 0, bufferSize);
 
-                /*Console.WriteLine("Sent: {0}", message);*/ //sends 
+                returnData = System.Text.Encoding.ASCII.GetString(inStream);
 
-                //receiving own data // how to recieve data from server 
-                //data = new Byte[256]; //buffer to store response bytes (response from server)
-
-                //Int32 bytes = stream.Read(data, 0, data.Length);  //read server data to stream client stream
-
-                //responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes); //convert server bytes to client string
-                //Console.WriteLine("Recieved: {0}", responseData);
-                //Console.ReadLine();
+                readData = "" + returnData;
+               
             }
-            //stream.Close(); //close streaming connection 
-            //client.Close(); //close client 
-      
+
         }
+
+        public partial class Form1
+        {
+            System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();
+            
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading;
 using System.Collections;
 
+//This is a TCP chatroom created during devCodeCamp during week #5 by A.Amini-Hajibashi
 
 namespace TCP_Server
 {
@@ -53,25 +54,37 @@ namespace TCP_Server
                 networkStream.Read(bytesFrom, 0, bytesFrom.Length); //read client stream
                 dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);  //encode message
                 Console.WriteLine("Received: {0}", dataFromClient);
-                //dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
+                dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
 
 
                 clientsList.Add(dataFromClient, clientSocket); //add message and TcPClient to hashlist 
-                //broadcast function to send message to all 
-                //broadcast(dataFromClient + "Joined", dataFromClient, false);
+                
+                BroadCastClientMessage(dataFromClient + "Joined", dataFromClient, false); //broadcast function to send message to all 
 
                 Console.WriteLine(dataFromClient + "Joined Chat Room");
 
             }
         }
         
-        public static void broadCastClientMessage (string message, string userName, bool flag)
+        public static void BroadCastClientMessage (string message, string userName, bool flag)
         {
             foreach(DictionaryEntry Item in clientsList)
             {
                 TcpClient broadcastSocket;
                 broadcastSocket = (TcpClient)Item.Value;
                 NetworkStream broadcastStream = broadcastSocket.GetStream();
+                Byte[] broadcastBytes = null;
+
+                if (flag == true)
+                {
+                    broadcastBytes = Encoding.ASCII.GetBytes(userName + "says:" + message);
+                }
+                else
+                {
+                    broadcastBytes = Encoding.ASCII.GetBytes(message);
+                }
+                broadcastStream.Write(broadcastBytes, 0, broadcastBytes.Length);
+                broadcastStream.Flush();
             }
         }
     }

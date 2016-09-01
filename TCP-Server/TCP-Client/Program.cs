@@ -11,7 +11,7 @@ namespace TCP_Client
         static void Main(string[] args)
         {
             Client client = new Client();
-            client.Connect();
+            client.GetMessage();
         }
     }
 }
