@@ -5,65 +5,77 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
+using System.Threading;
+using System.Collections;
+
 
 namespace TCP_Server
 {
     class Server
     {
-        public const int BufferSize = 1024;
-        public byte[] buffer = new byte[BufferSize];
+        
+        public static Hashtable clientsList;
+        IPAddress localAddress;
+        TcpListener chatServer;
+        TcpClient clientSocket;
+        NetworkStream networkStream;
         int i;
-        string data;
+        int counter;
+        public byte[] buffer;
+        public byte[] bytesFrom;
+        string dataFromClient;
+        public const int BufferSize = 1024;
         Int32 port = 10000;
-        IPAddress localAddress = IPAddress.Parse("10.2.20.26");
-        TcpListener server;
-        Dictionary<Client, string> dictionary;
 
         public Server()
         {
-            server = new TcpListener(localAddress, port); //constructor //transmission control server
-            data = null;
-            List<Client> clientList = new List<Client>(); //create a list clientlist to store client in dictionary
+            localAddress = IPAddress.Parse("10.2.20.34");
+            chatServer = new TcpListener(localAddress, port); //constructor //transmission control server
+            clientSocket = new TcpClient();
+            clientsList = new Hashtable();
+            buffer = new byte[BufferSize];
+            bytesFrom = new byte[1024];
+            dataFromClient = null;
+            counter = 0;
         }
-
 
         public void Start()
         {
-            byte[] bytes = new Byte[1024]; //buffer for reading data                          
-            server.Start(); //start listening for client requests
-
+            chatServer.Start(); //start listening for client requests
+            Console.WriteLine("Waiting for a connection...");
             while (true)
             {
-                Console.WriteLine("Waiting for a connection...");
-                TcpClient client = server.AcceptTcpClient(); //creating a member variable, type TcPclient to store accepted client 
-                Dictionary.
+                counter += 1;
+                clientSocket = chatServer.AcceptTcpClient(); //creating a member variable, type TcPclient to store accepted client                     
                 Console.WriteLine("Connected!");
-                NetworkStream stream = client.GetStream(); //creating a member variable, type Networkstream to store client stream
+                networkStream = clientSocket.GetStream();
 
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) //reiceve client data loop
-                {
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i); //translate data bytes to ASCII string
-                    Console.WriteLine("Received: {0}", data);
+                networkStream.Read(bytesFrom, 0, bytesFrom.Length); //read client stream
+                dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);  //encode message
+                Console.WriteLine("Received: {0}", dataFromClient);
+                //dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
 
-                    byte[] message = System.Text.Encoding.ASCII.GetBytes(data);
 
-                    //send message back
-                    stream.Write(message, 0, message.Length);
-                    Console.WriteLine("Recieved: {0}", data);
-                    Console.ReadLine();
-                }
+                clientsList.Add(dataFromClient, clientSocket); //add message and TcPClient to hashlist 
+                //broadcast function to send message to all 
+                //broadcast(dataFromClient + "Joined", dataFromClient, false);
+
+                Console.WriteLine(dataFromClient + "Joined Chat Room");
+
+            }
+        }
+        
+        public static void broadCastClientMessage (string message, string userName, bool flag)
+        {
+            foreach(DictionaryEntry Item in clientsList)
+            {
+                TcpClient broadcastSocket;
+                broadcastSocket = (TcpClient)Item.Value;
+                NetworkStream broadcastStream = broadcastSocket.GetStream();
             }
         }
     }
 }
     
     
-        
-
-    //}
-
-
-        //server.Stop(); //stop listening for new clients
-        //client.Close(); //shutdown and end connection
-//    }
-//}
+       

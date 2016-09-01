@@ -10,21 +10,21 @@ namespace TCP_Server
     {
         //FacadeDesignPattern
 
-        private string _name;
-        private double _customerID;
+        //private string _name;
+        //private double _customerID;
 
-        public string Name
-        {
-            get { return _name; }
-        }
-        public double CustomerID
-        {
-            get { return _customerID; }
-        }
+        //public string Name
+        //{
+        //    get { return _name; }
+        //}
+        //public double CustomerID
+        //{
+        //    get { return _customerID; }
+        //}
 
-        public double ipAddress
-        {
-            get { return _ipAddress}
-        }
+        //public double ipAddress
+        //{
+        //    get { return _ipAddress}
+        //}
     }
 }
