@@ -27,17 +27,19 @@ namespace TCP_Client
 
         public Client()
         {
+            port = 10000;
             clientSocket = new TcpClient("10.2.20.34", port); //constructor
+            readData = "Connected to Arsalon's Chat Server....";
+            Console.WriteLine(readData);
             serverStream = default(NetworkStream);
             serverStream = clientSocket.GetStream();
             localAddress = IPAddress.Parse("10.2.20.34");
-            port = 10000;
             readData = null;
+            inStream = new byte[65536];
             responseData = string.Empty;
-            outData = System.Text.Encoding.ASCII.GetBytes();
+            outData = System.Text.Encoding.ASCII.GetBytes("asddf");
             returnData = System.Text.Encoding.ASCII.GetString(inStream);
             stream = clientSocket.GetStream();
-            inStream = new byte[1024];
             bufferSize = clientSocket.ReceiveBufferSize;
             clientThread = new Thread(GetMessage);
         }
@@ -48,10 +50,8 @@ namespace TCP_Client
             serverStream.Write(outData, 0, outData.Length);
             serverStream.Flush();
         }
-        private void button2_Click(object sender, EventArgs e)
+        public void SendMessage()
         {
-            readData = "Connected to Arsalon's Chat Server....";
-            clientSocket.Connect("10.2.20.34", 10000);
             serverStream.Write(outData, 0, outData.Length);
             serverStream.Flush();
         }
@@ -62,32 +62,10 @@ namespace TCP_Client
             {
                 serverStream = clientSocket.GetStream();
                 serverStream.Read(inStream, 0, bufferSize);
-
                 returnData = System.Text.Encoding.ASCII.GetString(inStream);
-
                 readData = "" + returnData;
-               
+                
             }
-
         }
-
-        public partial class Form1
-        {
-            System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();
-            
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCP_Server
+namespace TCpChatroom
 {
-    class Message
+    class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }

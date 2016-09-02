@@ -48,7 +48,7 @@ namespace TCP_Server
                     requestCount = requestCount + 1;
                     networkStream.Read(bytesFrom, 0, clientSocket.ReceiveBufferSize);
                     dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
-                    //dataFromClient = dataFromClient.Substring(0, dataFromClient.Indexof("$"));
+                    dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
                     Console.WriteLine("From Client - " + clientNumber + ":" + dataFromClient);
                     returnCount = Convert.ToString(requestCount);
 
@@ -60,7 +60,6 @@ namespace TCP_Server
                     Console.WriteLine(ex.ToString());
                 }
             }
-
         }
     }
 }

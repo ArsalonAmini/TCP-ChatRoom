@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCpChatroom", "TCpChatroom\TCpChatroom.csproj", "{FB0C459D-5009-4860-AF24-BC38F89F1681}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{157DA916-6F14-47B8-8224-9B7921FE78BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{E4502FD5-4CDA-4FA9-86A9-592BE5DB402F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB0C459D-5009-4860-AF24-BC38F89F1681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0C459D-5009-4860-AF24-BC38F89F1681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0C459D-5009-4860-AF24-BC38F89F1681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0C459D-5009-4860-AF24-BC38F89F1681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157DA916-6F14-47B8-8224-9B7921FE78BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157DA916-6F14-47B8-8224-9B7921FE78BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157DA916-6F14-47B8-8224-9B7921FE78BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157DA916-6F14-47B8-8224-9B7921FE78BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4502FD5-4CDA-4FA9-86A9-592BE5DB402F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4502FD5-4CDA-4FA9-86A9-592BE5DB402F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4502FD5-4CDA-4FA9-86A9-592BE5DB402F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4502FD5-4CDA-4FA9-86A9-592BE5DB402F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

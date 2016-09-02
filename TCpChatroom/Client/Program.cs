@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCP_Client
+namespace Client
 {
     class Program
     {
         static void Main(string[] args)
         {
             Client client = new Client();
-            client.GetMessage();
-            client.SendMessage();
+            client.Connect();
         }
     }
 }
