@@ -24,27 +24,32 @@ namespace Client
         }
         public void Connect()
         {
-
+            //
+        }
+        public void SendMessage()
+        {
             while (true)
             {
                 //send message to server
-                Console.WriteLine("Enter Message:");
+                Console.WriteLine("Enter name:");
                 message = Console.ReadLine();
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); //converts string message to ASCII zeros and ones code, stores ints into byte array called data
                 NetworkStream stream = client.GetStream(); //create variable stream, type networkstream, assign return client stream
                 stream.Write(data, 0, data.Length); //write data to stream 
                 Console.WriteLine("Sent: {0}", message); //sends 
-
+            }
+        }
+        public void AcceptMessage()
+        {
+            while (true)
+            {
                 //recieve message from server
-                data = new Byte[256]; //buffer to store response bytes (response from server)
+                responseData = new Byte[256]; //buffer to store response bytes (response from server)
                 Int32 bytes = stream.Read(data, 0, data.Length);  //read data from stream
                 responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes); //convert server bytes (read) into string 
                 Console.WriteLine("Recieved: {0}", responseData);
                 Console.ReadLine();
             }
-            //stream.Close(); //close streaming connection 
-            //client.Close(); //close client 
-
         }
     }
 }

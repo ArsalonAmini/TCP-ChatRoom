@@ -17,9 +17,10 @@ namespace Server
         IPAddress localAddress;
         TcpListener server;
         TcpClient clientSocket;
-        NetworkStream networkStream;
+        public NetworkStream networkStream;
+        Chat chat;
         Int32 port = 10000;
-        string dataFromClient;
+        string nameOfClient;
         public byte[] buffer;
         public byte[] bytesFrom;
         public const int BufferSize = 1024; 
@@ -31,45 +32,57 @@ namespace Server
             server = new TcpListener(localAddress, port);
             clientSocket = new TcpClient();
             clientsList = new Hashtable();
+            //networkStream = clientSocket.GetStream();
             buffer = new byte[BufferSize];
             bytesFrom = new byte[1024];
-            dataFromClient = null;
-            counter = 0;
+            nameOfClient = null;
+            //counter = 0;
         }
 
         public void AcceptClient()
         {
-            byte[] bytes = new Byte[1024]; //buffer for reading data                          
             server.Start(); //method of the TcP listener class
+            Console.WriteLine("Waiting for a connection...");
 
             while (true)
             {
-                Console.WriteLine("Waiting for a connection...");
-
-               
-                TcpClient client = server.AcceptTcpClient(); 
+                clientSocket = server.AcceptTcpClient();
                 Console.WriteLine("Connected!");
-                
-                NetworkStream stream = client.GetStream(); 
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0) 
-                {
-                    dataFromClient = System.Text.Encoding.ASCII.GetString(bytes, 0, i); 
-                    Console.WriteLine("Received: {0}", dataFromClient);
-                    byte[] message = System.Text.Encoding.ASCII.GetBytes(dataFromClient);
+                networkStream = clientSocket.GetStream();
+            }
+        }
 
-                    //send message back
-                    //stream.Write(message, 0, message.Length);
-                    //Console.WriteLine("Recieved: {0}", data);
-                    //Console.ReadLine();
+        public void lookForClient
+
+        pubic void GetClientMessage
+                networkStream.Read(bytesFrom, 0, bytesFrom.Length);
+                nameOfClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
+                Console.WriteLine("Welcome: {0}", nameOfClient);
+                clientsList.Add(nameOfClient, clientSocket); //nameOfClient = key, clientSocket = value
+                chat = new Chat(clientSocket, networkStream, clientsList);
+                chat.runChat(networkStream);
+
+                //send message back
+                byte[] message = System.Text.Encoding.ASCII.GetBytes(nameOfClient);
+                networkStream.Write(message, 0, message.Length);
+                Console.WriteLine("Recieved: {0}", nameOfClient);
+                Console.ReadLine();
 
                 }
 
-                server.Stop(); //stop listening for new clients
-                client.Close(); //shutdown and end connection
+                //server.Stop(); //stop listening for new clients
+                //client.Close(); //shutdown and end connection
             }
 
+        public void BroadCastClientMessage()
+        {
 
         }
 
-    }
-}
+        }
+        
+
+        }
+    
+
+

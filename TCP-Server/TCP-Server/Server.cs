@@ -62,7 +62,6 @@ namespace TCP_Server
                 BroadCastClientMessage(dataFromClient + "Joined", dataFromClient, false); //broadcast function to send message to all 
 
                 Console.WriteLine(dataFromClient + "Joined Chat Room");
-
             }
         }
         
@@ -81,7 +80,7 @@ namespace TCP_Server
                 }
                 else
                 {
-                    broadcastBytes = Encoding.ASCII.GetBytes(message);
+                    broadcastBytes = Encoding.ASCII.GetBytes(userName);
                 }
                 broadcastStream.Write(broadcastBytes, 0, broadcastBytes.Length);
                 broadcastStream.Flush();
